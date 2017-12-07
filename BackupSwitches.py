@@ -27,7 +27,7 @@ def runCommands(session):
 	#sends TFTP transfer command
 	session.send("\n")
 	session.send("copy running-config tftp:\n")
-	session.send("10.80.96.242 \n")
+	session.send("TFTP SERVER IP ADDRESS \n")
 	session.send("\n")
 	time.sleep(5)
 	print("Completed transfer")
@@ -49,7 +49,7 @@ if __name__ == '__main__':
 	Password = getpass.getpass("Password: ")
 
 	#opens CSV file with the swith IP's, Calls the function to run the backup of config.dat
-	with open('c:/pythonscripts/Switch.csv') as csvDataFile:
+	with open('YOUR CSV FILE PATH') as csvDataFile:
 		reader=csv.reader(csvDataFile)
 		for row in reader:
 			ip=row[0]
